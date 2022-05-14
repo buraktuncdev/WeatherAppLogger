@@ -9,9 +9,7 @@ import Foundation
 
 public class Logger {
 
-    public static let shared: Logger = Logger()
-
-    func log(_ logType: LogType, _ message: String){
+    public func log(_ logType: LogType, _ message: String){
         switch logType {
         case .error:
             print("[\(#file) line:\(#line)]: 🔴 Error: \(message)")
@@ -24,7 +22,7 @@ public class Logger {
         }
     }
 
-    func sendLogToRemoteServer(message: String) {
+    public func sendLogToRemoteServer(message: String) {
         print("Remote logging functionality not implemented yet")
     }
 }

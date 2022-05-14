@@ -9,7 +9,7 @@ import Foundation
 
 public class Logger {
 
-    static let shared: Logger = Logger()
+    public static let shared: Logger = Logger()
 
     func log(_ logType: LogType, _ message: String){
         switch logType {

@@ -9,6 +9,8 @@ import Foundation
 
 public class Logger {
 
+    static let shared: Logger = Logger()
+
     public func log(_ logType: LogType, _ message: String){
         switch logType {
         case .error:

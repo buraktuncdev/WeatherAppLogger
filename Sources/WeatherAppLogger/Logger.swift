@@ -11,16 +11,18 @@ public class Logger {
 
     public static let shared: Logger = Logger()
 
-    public func log(_ logType: LogType, _ message: String){
+    public func log(_ logType: LogType, _ message: String,
+                    fileName: String = #file,
+                    lineNumber: Int = #line){
         switch logType {
         case .error:
-            print("[\(#file) line:\(#line)]: 🔴 Error: \(message)")
+            print("[\(fileName) line:\(lineNumber)]: 🔴 Error: \(message)")
         case .warning:
-            print("[\(#file) line:\(#line)]: 🟡 Warning: \(message)")
+            print("[\(fileName) line:\(lineNumber)]: 🟡 Warning: \(message)")
         case .success:
-            print("[\(#file) line:\(#line)]: 🟢 Success: \(message)")
+            print("[\(fileName) line:\(lineNumber)]: 🟢 Success: \(message)")
         case .info:
-            print("[\(#file) line:\(#line)]: 🔵 Info: \(message)")
+            print("[\(fileName) line:\(lineNumber)]: 🔵 Info: \(message)")
         }
     }
 

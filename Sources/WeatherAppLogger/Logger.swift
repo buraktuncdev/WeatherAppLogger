@@ -14,15 +14,16 @@ public class Logger {
     public func log(_ logType: LogType, _ message: String,
                     fileName: String = #file,
                     lineNumber: Int = #line){
+        let exactFileName = fileName.components(separatedBy: "/")
         switch logType {
         case .error:
-            print("[\(fileName) line:\(lineNumber)]: 🔴 Error: \(message)")
+            print("[\(exactFileName.last) line:\(lineNumber)]: 🔴 Error: \(message)")
         case .warning:
-            print("[\(fileName) line:\(lineNumber)]: 🟡 Warning: \(message)")
+            print("[\(exactFileName.last) line:\(lineNumber)]: 🟡 Warning: \(message)")
         case .success:
-            print("[\(fileName) line:\(lineNumber)]: 🟢 Success: \(message)")
+            print("[\(exactFileName.last) line:\(lineNumber)]: 🟢 Success: \(message)")
         case .info:
-            print("[\(fileName) line:\(lineNumber)]: 🔵 Info: \(message)")
+            print("[\(exactFileName.last) line:\(lineNumber)]: 🔵 Info: \(message)")
         }
     }
 

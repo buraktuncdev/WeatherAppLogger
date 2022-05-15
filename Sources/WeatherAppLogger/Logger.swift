@@ -17,13 +17,13 @@ public class Logger {
         let exactFileName = fileName.components(separatedBy: "/")
         switch logType {
         case .error:
-            print("[\(exactFileName.last) line:\(lineNumber)]: 🔴 Error: \(message)")
+            print("[\(String(describing: exactFileName.last)) line:\(lineNumber)]: 🔴 Error: \(message)")
         case .warning:
-            print("[\(exactFileName.last) line:\(lineNumber)]: 🟡 Warning: \(message)")
+            print("[\(String(describing: exactFileName.last)) line:\(lineNumber)]: 🟡 Warning: \(message)")
         case .success:
-            print("[\(exactFileName.last) line:\(lineNumber)]: 🟢 Success: \(message)")
+            print("[\(String(describing: exactFileName.last)) line:\(lineNumber)]: 🟢 Success: \(message)")
         case .info:
-            print("[\(exactFileName.last) line:\(lineNumber)]: 🔵 Info: \(message)")
+            print("[\(String(describing: exactFileName.last)) line:\(lineNumber)]: 🔵 Info: \(message)")
         }
     }
 
